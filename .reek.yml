@@ -1,0 +1,47 @@
+---
+  detectors:
+    UncommunicativeVariableName:
+      exclude:
+        - "Services::Parsers::FileLog#split_row" # conflict with rubocop for name of exception
+
+    UtilityFunction:
+      exclude:
+        - "Main#call" # this is function which run script, and soent have state
+        - "Services::ParseFile#extension_for" # its helper
+
+    Attribute:
+      exclude:
+        - "Models::ApiWithScore#endpoint" # this is Model entitiy with attribute we should write to it and read from it
+        - "Models::ApiWithScore#score" # this is Model entitiy with attribute we should write to it and read from it
+        - "Models::Log#data" # this is Model entitiy with attribute we should write to it and read from it
+
+    DuplicateMethodCall:
+      max_calls: 3 # 3 optimal number
+      exclude:
+        - "Services::CountVisits#call" # we call @config.redis many time because we have one db connection and put it to each repo
+
+    InstanceVariableAssumption:
+      exclude:
+        # we have many logic on db variable, but this is db connection and we should call all redis operation on it
+        - "Repositories::Redis::VisitsCount"
+        - "Repositories::Redis::UniqIpsForEndpoint"
+        - "Repositories::Redis::UniqVisitsCount"
+        - "Repositories::Redis::Logger"
+
+    TooManyStatements:
+      exclude:
+        - "Printers::Stdout#print_errors_if_exists" # for better printing view
+        - "Services::ParseFile#call"
+
+    FeatureEnvy:
+      exclude:
+        - "Printers::Stdout#print_reports" # thisi is config, it contains printer details and db connection, better to have it in one place
+        - "Services::ParseFile#write_result_in_db" # call calls result because this is monads
+
+    NestedIterators:
+      exclude:
+        - "Services::ParseFile#call" # this is monads, its deep only 2, we can use do notation, but do notaion have their own cons
+
+    ManualDispatch:
+      exclude:
+        - "Services::ParseFile#call" # should be reworked if really need to enable it
