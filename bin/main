@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require './app/main.rb'
+
+raise 'Filepath is nil!' if ARGV.empty?
+raise 'Filepath should be one string only!' if ARGV.size != 1
+
+Main.new.call ARGV.first
