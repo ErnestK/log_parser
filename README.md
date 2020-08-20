@@ -12,7 +12,8 @@ list of webpages with most unique page views also ordered:
 ## How to install section 
 To install project you should
 - clone project
-- execute `bundle install` in console
+- execute `cd log_parser`  in console            
+- execute `bundle install` in console        
 - execute `docker-compose up -d` in console to run the container with Redis. For development it was decided to bring the database into the container.
 
 ## How to run app
@@ -44,7 +45,7 @@ since the webservice.log file contains too bad IPS.
 But it can be converted to `true` and the check will turn on
 
 ### Repositories
-Since the problem asked to use the DDD methodology, I decided to use the repository pattern.           
+Since the interviewers asked me to use the DDD methodology patterns, I decided to use the repository pattern.                                   
 I developed it inspired by the spring boot repository.           
 We describe repositories without being tied to a database and the methods that we want to execute on db            
 (in Kotlin, these are just interfaces, we had to use modules but prohibit calling them directly, it's a pity that there are no abstract methods in Ruby),           
