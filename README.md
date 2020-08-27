@@ -10,6 +10,7 @@ list of webpages with most unique page views also ordered:
 `/about/2 8 unique views /index 5 unique views etc...`          
 
 **SOLID, DDD for you classes**            
+**Show work with repositories, monads, DDD... Not just do task as simply as possible( even if its smart decision ) because this project demo**                                          
 **Data structure for the log and entities, not hashes**                      
           
 ## How to install section 
