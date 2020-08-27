@@ -8,6 +8,9 @@ list of webpages with most page views ordered from most pages views to less page
 `/home 90 visits /index 80 visits etc...`          
 list of webpages with most unique page views also ordered:                    
 `/about/2 8 unique views /index 5 unique views etc...`          
+
+**SOLID, DDD for you classes**            
+**Data structure for the log and entities, not hashes**                      
           
 ## How to install section 
 To install project you should
